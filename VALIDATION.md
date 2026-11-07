@@ -53,7 +53,7 @@ The AI sample prioritizes Outlier audio work, DataAnnotation coding/multilingual
 
 ## GitHub publication
 
-Publication and anonymous retrieval are checked after the initial push. The final delivery records the GitHub-confirmed URL; do not infer successful publication from a local file alone.
+Published: [Emoscuko/career-knowledge-base](https://github.com/Emoscuko/career-knowledge-base). GitHub confirmed visibility `public` and default branch `main`. An unauthenticated API request and archive download independently confirmed public access. All 36 tracked files in the downloaded archive matched initial implementation commit `1fd3eece005d4e002fa46ee571960d308af6d5b8` byte for byte, and the raw README matched the local source. This verification report is added in a follow-up commit; the final delivery also verifies the final published archive. PDFs and private source files were absent from the archive.
 
 For a fresh local copy that has not been published, use the following from its root. Do not recreate or overwrite an existing repository. Configure a public/noreply Git identity first if needed.
 
