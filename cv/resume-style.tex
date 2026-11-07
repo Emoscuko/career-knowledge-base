@@ -1,0 +1,44 @@
+% Shared layout only. Canonical career facts live in YAML and Markdown records.
+\usepackage[a4paper,margin=16mm]{geometry}
+\usepackage[T1]{fontenc}
+\ifdefined\pdftexversion\usepackage[utf8]{inputenc}\fi
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks,unicode]{hyperref}
+% pdfTeX needs explicit glyph maps; XeTeX/Tectonic supplies Unicode maps itself.
+\ifdefined\pdfgentounicode
+  \IfFileExists{glyphtounicode.tex}{\input{glyphtounicode.tex}}{}
+  \pdfgentounicode=1
+\fi
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\setlength{\emergencystretch}{2em}
+\urlstyle{same}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{9pt}{4pt}
+\setlist[itemize]{leftmargin=1.35em,itemsep=2pt,parsep=0pt,topsep=2pt,partopsep=0pt}
+\newcommand{\CareerEmail}{}
+\newcommand{\CareerPhone}{}
+\newcommand{\CareerLocation}{}
+\newcommand{\CareerLinkedIn}{}
+\newcommand{\ResumeOptionalContact}[1]{%
+  \if\relax\detokenize\expandafter{#1}\relax
+  \else\enspace|\enspace #1\fi
+}
+\newcommand{\ResumeHeader}[4]{%
+  {\LARGE\bfseries #1}\par
+  {\normalsize #2}\par
+  \href{#3}{#4}%
+  \ResumeOptionalContact{\CareerEmail}%
+  \ResumeOptionalContact{\CareerPhone}%
+  \ResumeOptionalContact{\CareerLocation}%
+  \ResumeOptionalContact{\CareerLinkedIn}%
+  \par
+}
+\newcommand{\ResumeEntry}[4]{%
+  \textbf{#1}\hfill #3\par
+  \textit{#2}\hfill #4\par
+}
+\newcommand{\ResumeProject}[2]{\textbf{#1}\enspace|\enspace #2\par}

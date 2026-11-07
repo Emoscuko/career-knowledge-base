@@ -1,0 +1,155 @@
+schema_version: 1
+id: source-registry
+as_of: '2026-11-07'
+documents:
+- id: source-cv
+  original_filename: Cv.pdf
+  sha256: 0aaf4fbd930986bbb6694376c8b08b0d3a207351e61813a84e0243fb721c3c0d
+  page_count: 2
+  received_date: '2026-11-07'
+  visibility: private_not_committed
+  evidence_scope: Candidate-supplied CV; claims have not been independently audited.
+- id: source-annotation
+  original_filename: CVAnnotation.pdf
+  sha256: 5415202ec6105ee1777434b32d196482cc6da5e985e538bff23111febdbb5cef
+  page_count: 2
+  received_date: '2026-11-07'
+  visibility: private_not_committed
+  evidence_scope: Candidate-supplied CV; claims have not been independently audited.
+locators:
+- id: src-cv-identity
+  source_id: source-cv
+  pages:
+  - 1
+  section: Header
+- id: src-cv-profile
+  source_id: source-cv
+  pages:
+  - 1
+  section: Profile
+- id: src-cv-education
+  source_id: source-cv
+  pages:
+  - 1
+  section: Education
+- id: src-cv-aselsan
+  source_id: source-cv
+  pages:
+  - 1
+  section: Experience / ASELSAN
+- id: src-cv-revloai
+  source_id: source-cv
+  pages:
+  - 1
+  section: Experience / RevloAI
+- id: src-cv-freelance
+  source_id: source-cv
+  pages:
+  - 1
+  section: Experience / Freelance
+- id: src-cv-robotics
+  source_id: source-cv
+  pages:
+  - 1
+  section: Projects / Vision-Guided Robotic Positioning
+- id: src-cv-slime
+  source_id: source-cv
+  pages:
+  - 1
+  section: Projects / Slime Hunter
+- id: src-cv-saferoads
+  source_id: source-cv
+  pages:
+  - 2
+  section: Projects / SafeRoads
+- id: src-cv-skills
+  source_id: source-cv
+  pages:
+  - 2
+  section: Skills
+- id: src-cv-achievements
+  source_id: source-cv
+  pages:
+  - 2
+  section: Achievements
+- id: src-cv-languages
+  source_id: source-cv
+  pages:
+  - 2
+  section: Languages
+- id: src-ann-identity
+  source_id: source-annotation
+  pages:
+  - 1
+  section: Header
+- id: src-ann-profile
+  source_id: source-annotation
+  pages:
+  - 1
+  section: Profile
+- id: src-ann-outlier
+  source_id: source-annotation
+  pages:
+  - 1
+  section: Relevant Experience / Outlier AI
+- id: src-ann-dataannotation
+  source_id: source-annotation
+  pages:
+  - 1
+  section: Relevant Experience / DataAnnotation.tech
+- id: src-ann-content
+  source_id: source-annotation
+  pages:
+  - 1
+  section: Relevant Experience / Independent Social Media Content Creator
+- id: src-ann-skills
+  source_id: source-annotation
+  pages:
+  - 1
+  section: Relevant Skills
+- id: src-ann-education
+  source_id: source-annotation
+  pages:
+  - 1
+  - 2
+  section: Education (continues on page 2)
+- id: src-ann-aselsan
+  source_id: source-annotation
+  pages:
+  - 2
+  section: Additional Professional Experience / ASELSAN
+- id: src-ann-revloai
+  source_id: source-annotation
+  pages:
+  - 2
+  section: Additional Professional Experience / RevloAI
+- id: src-ann-robotics
+  source_id: source-annotation
+  pages:
+  - 2
+  section: Selected Technical Projects / Vision-Guided Robotic Positioning
+- id: src-ann-slime
+  source_id: source-annotation
+  pages:
+  - 2
+  section: Selected Technical Projects / Slime Hunter
+- id: src-ann-saferoads
+  source_id: source-annotation
+  pages:
+  - 2
+  section: Selected Technical Projects / SafeRoads
+- id: src-ann-achievements
+  source_id: source-annotation
+  pages:
+  - 2
+  section: Achievements
+- id: src-ann-languages
+  source_id: source-annotation
+  pages:
+  - 2
+  section: Languages
+extraction_notes:
+- Both pages of each PDF were extracted and visually reviewed.
+- Original PDFs, full text dumps, personal email, phone and personal social profile are excluded.
+- Sources overlap; an omission in one source does not negate a claim in the other.
+- Present describes the source snapshot on 2026-11-07, not indefinite current employment.

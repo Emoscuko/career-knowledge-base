@@ -1,0 +1,43 @@
+schema_version: 1
+id: repository-index
+as_of: '2026-11-07'
+entry_points:
+- README.md
+- AGENTS.md
+- DATA_REVIEW.md
+- cv/generation-rules.md
+records:
+- id: profile-emirhan-atar
+  path: profile.yaml
+- id: skills-inventory
+  path: skills.yaml
+- id: source-registry
+  path: sources.yaml
+- id: data-review
+  path: DATA_REVIEW.md
+- id: experience-aselsan
+  path: experience/aselsan.md
+- id: experience-dataannotation
+  path: experience/dataannotation.md
+- id: experience-freelance-unattributed
+  path: experience/freelance-unattributed.md
+- id: experience-outlier
+  path: experience/outlier.md
+- id: experience-revloai
+  path: experience/revloai.md
+- id: project-robotic-positioning
+  path: projects/robotic-positioning.md
+- id: project-saferoads
+  path: projects/saferoads.md
+- id: project-slime-hunter
+  path: projects/slime-hunter.md
+- id: background-achievements
+  path: background/achievements.md
+- id: background-certifications
+  path: background/certifications.md
+- id: experience-content-creation
+  path: background/content-creation.md
+- id: background-education
+  path: background/education.md
+- id: background-languages
+  path: background/languages.md

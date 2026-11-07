@@ -1,0 +1,56 @@
+\documentclass[10pt,a4paper]{article}
+\input{cv/resume-style.tex}
+% Optional local private contacts; never commit cv/contact.local.tex or its PDF.
+\InputIfFileExists{cv/contact.local.tex}{}{}
+\begin{document}
+
+% Layout demonstration using a small, source-backed selection.
+% Read canonical records and generation-rules.md before tailoring this selection.
+\ResumeHeader{Emirhan Atar}{Computer Engineering Student | Software, Cloud \& AI}
+  {https://github.com/Emoscuko}{github.com/Emoscuko}
+
+\section{Professional Summary}
+Computer Engineering student with internship experience developing Go backend services,
+LLM chatbot integrations and Azure deployment workflows. Project experience includes
+robotic positioning and mobile game development.
+
+\section{Education}
+\ResumeEntry{Akdeniz University}{B.S. in Computer Engineering}{Expected June 2027}{}
+100\% English-medium instruction. Cumulative GPA: 3.72/4.00.
+
+\section{Professional Experience}
+\ResumeEntry{RevloAI}{Full-Stack Developer Intern}{30-day internship}{Antalya, Turkey}
+\begin{itemize}
+  \item Developed Go backend services for real-time data processing in a hospitality SaaS platform.
+  \item Integrated LLMs into chatbots and optimized response logic and conversational flows.
+  \item Managed Microsoft Azure infrastructure and automated deployments.
+\end{itemize}
+
+\section{Technical Skills}
+\textbf{Backend and cloud:} Go, Spring Boot, Microsoft Azure.\par
+\textbf{Development:} Angular, C\#, Unity, object-oriented programming, design patterns.\par
+\textbf{Delivery:} Azure DevOps, CI/CD, Agile/Scrum, code reviews.
+
+\section{Selected Projects}
+\ResumeProject{Vision-Guided Robotic Positioning}{ROS2, Meca500, GigE camera}
+\begin{itemize}
+  \item Developed autonomous positioning with homography-based camera-to-robot transformation,
+        real-time sensor feedback and fault-tolerant motion control.
+\end{itemize}
+\ResumeProject{Slime Hunter}{Unity, C\#}
+\begin{itemize}
+  \item Designed a 2D top-down mobile shooter with state-machine enemy AI and modular architecture.
+  \item Optimized rendering with object pooling and sprite atlases; published on the App Store and Google Play.
+\end{itemize}
+
+\section{Languages}
+Turkish: Native; English: C1 (Advanced); German: A2 (Elementary).
+
+% Optional, only when relevant and supported by a canonical claim:
+% \section{Achievements}
+% \begin{itemize}
+%   \item Hackathon: 3rd place. % claim-achievement-hackathon; event details unknown.
+% \end{itemize}
+% \section{Certifications}
+% Add only after actual certification evidence is supplied. No certification is implied.
+\end{document}

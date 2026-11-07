@@ -1,0 +1,67 @@
+schema_version: 1
+id: profile-emirhan-atar
+name: Emirhan Atar
+as_of: '2026-11-07'
+headline: Computer Engineering Student | Software, Cloud and AI
+verification_status: source_supported
+education_refs:
+- background-education
+experience_refs:
+- experience-aselsan
+- experience-revloai
+- experience-outlier
+- experience-dataannotation
+- experience-freelance-unattributed
+- experience-content-creation
+project_refs:
+- project-robotic-positioning
+- project-slime-hunter
+- project-saferoads
+background_refs:
+- background-languages
+- background-achievements
+- background-certifications
+public_links:
+- label: GitHub
+  url: https://github.com/Emoscuko
+  source_refs:
+  - src-cv-identity
+  - src-ann-identity
+  verification_status: externally_verified
+  verified_on: '2026-11-07'
+  verification_method: CV hyperlink target matches the authenticated GitHub connector login and user ID 165709356.
+private_contact:
+  policy: Supply locally for a specific application; never commit real values.
+  email_env: CAREER_EMAIL
+  phone_env: CAREER_PHONE
+  location_env: CAREER_LOCATION
+  linkedin_env: CAREER_LINKEDIN
+claims:
+- id: claim-name
+  text: 'Professional name: Emirhan Atar.'
+  kind: identity
+  verification_status: source_supported
+  source_refs:
+  - src-cv-identity
+  - src-ann-identity
+- id: claim-student
+  text: Computer Engineering student with software, cloud and AI experience.
+  kind: profile
+  verification_status: source_supported
+  source_refs:
+  - src-cv-profile
+  - src-ann-profile
+- id: claim-data-pipelines
+  text: General CV profile reports experience building data pipelines; architecture, dates and project attribution
+    are unspecified.
+  kind: self_report
+  verification_status: self_reported
+  source_refs:
+  - src-cv-profile
+- id: claim-adaptability
+  text: General CV describes analytical problem solving, working in Agile environments, learning technologies
+    quickly and building user-centric solutions.
+  kind: self_report
+  verification_status: self_reported
+  source_refs:
+  - src-cv-profile

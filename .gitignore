@@ -1,0 +1,40 @@
+# Private evidence and application-specific input
+/private/
+/local/
+/output/
+/tmp/
+.env
+.env.*
+!.env.example
+*contact*.local.*
+cv/contact.local.tex
+job-description*.txt
+job-description*.md
+
+# Original/derived private resumes and binary documents
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.docx
+*.zip
+
+# LaTeX build output
+/build/
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+
+# Python and editors
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+.vscode/
+.idea/

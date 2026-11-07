@@ -1,0 +1,1361 @@
+schema_version: 1
+id: skills-inventory
+as_of: '2026-11-07'
+categories:
+- id: programming-languages
+  name: Programming Languages
+- id: backend-development
+  name: Backend Development
+- id: frontend-development
+  name: Frontend Development
+- id: artificial-intelligence
+  name: Artificial Intelligence and Machine Learning
+- id: llm-evaluation
+  name: LLM Evaluation and AI Training
+- id: data-annotation
+  name: Data Annotation
+- id: cloud-computing
+  name: Cloud Computing
+- id: devops-infrastructure
+  name: DevOps and Infrastructure
+- id: databases
+  name: Databases
+- id: robotics-vision
+  name: Robotics and Computer Vision
+- id: game-development
+  name: Game Development
+- id: engineering-practices
+  name: Software Engineering Practices
+- id: tools-frameworks
+  name: Tools and Frameworks
+- id: languages-communication
+  name: Languages and Communication
+- id: content-media
+  name: Content Creation and Digital Media
+interpretation:
+  source_supported: Explicit CV-backed task or background record; not independent employment or proficiency
+    verification.
+  self_reported: Listed skill or familiarity without a task-specific demonstration in the supplied evidence.
+  proficiency_policy: No numeric proficiency or years; only supplied natural-language proficiency levels are
+    retained.
+  association_policy: Related records support the specific cited task; never infer a stack or language from
+    an adjacent technology.
+claims:
+- id: claim-listed-programming
+  text: 'Listed programming languages: Python, Go, Java (Spring Boot in general CV), C#, TypeScript, SQL and
+    C++.'
+  kind: skill_declaration
+  verification_status: self_reported
+  source_refs:
+  - src-cv-skills
+  - src-ann-skills
+- id: claim-listed-ai
+  text: General skills list names LLM integration, data annotation & RLHF, chatbot architecture, real-time
+    data processing and data modeling.
+  kind: skill_declaration
+  verification_status: self_reported
+  source_refs:
+  - src-cv-skills
+- id: claim-listed-devops
+  text: General skills list names Microsoft Azure (Blob Storage), Azure DevOps, GitHub Actions, Docker and
+    CI/CD.
+  kind: skill_declaration
+  verification_status: self_reported
+  source_refs:
+  - src-cv-skills
+- id: claim-listed-web
+  text: General skills list names RESTful APIs, microservices, Angular, JWT authentication, PostgreSQL and
+    MongoDB.
+  kind: skill_declaration
+  verification_status: self_reported
+  source_refs:
+  - src-cv-skills
+- id: claim-listed-tools
+  text: General skills list names Agile/Scrum, Git and UML modeling.
+  kind: skill_declaration
+  verification_status: self_reported
+  source_refs:
+  - src-cv-skills
+- id: claim-listed-annotation
+  text: Annotation CV lists AI training, audio annotation, AI response evaluation, coding evaluation, multilingual
+    evaluation, quality assessment and prompt engineering.
+  kind: skill_declaration
+  verification_status: self_reported
+  source_refs:
+  - src-ann-skills
+- id: claim-listed-analysis
+  text: Annotation CV lists critical thinking, attention to detail, instruction adherence, problem solving
+    and content quality assessment.
+  kind: skill_declaration
+  verification_status: self_reported
+  source_refs:
+  - src-ann-skills
+- id: claim-listed-media
+  text: Annotation CV lists Instagram, TikTok, short-form video, fitness content creation, social media trends,
+    audience engagement and content analysis.
+  kind: skill_declaration
+  verification_status: self_reported
+  source_refs:
+  - src-ann-skills
+- id: claim-listed-annotation-tools
+  text: 'Annotation CV technical tools list: Git, Microsoft Azure, Docker, RESTful APIs, PostgreSQL and MongoDB.'
+  kind: skill_declaration
+  verification_status: self_reported
+  source_refs:
+  - src-ann-skills
+skills:
+- id: skill-python
+  name: Python
+  category: programming-languages
+  tags:
+  - python
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-programming
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: Listed in both CVs; no particular task or project establishes usage. No proficiency or duration is
+    asserted.
+- id: skill-typescript
+  name: TypeScript
+  category: programming-languages
+  tags:
+  - typescript
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-programming
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: Listed in both CVs; no particular task or project establishes usage. No proficiency or duration is
+    asserted.
+- id: skill-sql
+  name: SQL
+  category: programming-languages
+  tags:
+  - sql
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-programming
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: Listed in both CVs; no particular task or project establishes usage. No proficiency or duration is
+    asserted.
+- id: skill-cpp
+  name: C++
+  category: programming-languages
+  tags:
+  - c++
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-programming
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: Listed in both CVs; no particular task or project establishes usage. No proficiency or duration is
+    asserted.
+- id: skill-go
+  name: Go
+  category: programming-languages
+  tags:
+  - go
+  - golang
+  - backend
+  - real-time processing
+  related_experiences:
+  - experience-revloai
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-programming
+  - claim-revloai-go
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-java
+  name: Java
+  category: programming-languages
+  tags:
+  - java
+  related_experiences:
+  - experience-freelance-unattributed
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-programming
+  - claim-freelance-java
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+  notes: Java code evaluation is explicit; platform attribution remains unresolved. Do not assign it to a named
+    employer.
+- id: skill-csharp
+  name: C#
+  category: programming-languages
+  tags:
+  - c#
+  - csharp
+  - unity
+  related_experiences: []
+  related_projects:
+  - project-slime-hunter
+  related_background: []
+  evidence_refs:
+  - claim-listed-programming
+  - claim-slime-stack
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-backend-services
+  name: Backend service development
+  category: backend-development
+  tags:
+  - backend service development
+  related_experiences:
+  - experience-revloai
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-revloai-go
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-spring-boot
+  name: Spring Boot
+  category: backend-development
+  tags:
+  - spring boot
+  related_experiences:
+  - experience-revloai
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-revloai-design
+  - claim-listed-programming
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-real-time-processing
+  name: Real-time data processing
+  category: backend-development
+  tags:
+  - real-time data processing
+  related_experiences:
+  - experience-revloai
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-revloai-go
+  - claim-listed-ai
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-rest-api
+  name: RESTful APIs
+  category: backend-development
+  tags:
+  - restful apis
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-web
+  - claim-listed-annotation-tools
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: Listed in the general skills section; no employer or project attribution is supplied.
+- id: skill-microservices
+  name: Microservices
+  category: backend-development
+  tags:
+  - microservices
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-web
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: Listed in the general skills section; no employer or project attribution is supplied.
+- id: skill-jwt
+  name: JWT authentication
+  category: backend-development
+  tags:
+  - jwt authentication
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-web
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: Listed in the general skills section; no employer or project attribution is supplied.
+- id: skill-angular
+  name: Angular
+  category: frontend-development
+  tags:
+  - angular
+  related_experiences:
+  - experience-revloai
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-revloai-design
+  - claim-listed-web
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-llm-integration
+  name: LLM integration
+  category: artificial-intelligence
+  tags:
+  - llm integration
+  related_experiences:
+  - experience-revloai
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-revloai-llm
+  - claim-listed-ai
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-chatbot-architecture
+  name: Chatbot architecture and conversational flows
+  category: artificial-intelligence
+  tags:
+  - chatbot architecture and conversational flows
+  related_experiences:
+  - experience-revloai
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-revloai-llm
+  - claim-listed-ai
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-data-pipelines
+  name: Data pipelines
+  category: backend-development
+  tags:
+  - data pipelines
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-data-pipelines
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: Claimed in the general profile only; specific implementation and attribution are unknown.
+- id: skill-ai-training
+  name: AI training support
+  category: llm-evaluation
+  tags:
+  - ai training support
+  related_experiences:
+  - experience-outlier
+  - experience-dataannotation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-outlier-audio
+  - claim-dataannotation-code
+  - claim-dataannotation-comparison
+  - claim-listed-annotation
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-ai-response-evaluation
+  name: AI response evaluation
+  category: llm-evaluation
+  tags:
+  - ai response evaluation
+  related_experiences:
+  - experience-dataannotation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-dataannotation-code
+  - claim-dataannotation-multilingual
+  - claim-dataannotation-comparison
+  - claim-listed-annotation
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-coding-evaluation
+  name: AI-generated code evaluation
+  category: llm-evaluation
+  tags:
+  - ai-generated code evaluation
+  related_experiences:
+  - experience-dataannotation
+  - experience-freelance-unattributed
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-dataannotation-code
+  - claim-freelance-java
+  - claim-listed-annotation
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+  notes: DataAnnotation supports coding evaluation generally; Java specificity belongs only to the unattributed
+    freelance record.
+- id: skill-java-evaluation
+  name: Java code evaluation
+  category: llm-evaluation
+  tags:
+  - java code evaluation
+  related_experiences:
+  - experience-freelance-unattributed
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-freelance-java
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+  notes: Source-supported task; platform is unresolved. Examples omit employer attribution.
+- id: skill-multilingual-evaluation
+  name: Multilingual AI response evaluation
+  category: llm-evaluation
+  tags:
+  - multilingual ai response evaluation
+  related_experiences:
+  - experience-dataannotation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-dataannotation-multilingual
+  - claim-listed-annotation
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+  notes: Evaluation languages are not specified; do not infer them from personal language levels.
+- id: skill-response-comparison
+  name: AI response comparison
+  category: llm-evaluation
+  tags:
+  - ai response comparison
+  related_experiences:
+  - experience-dataannotation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-dataannotation-comparison
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-prompt-engineering
+  name: Prompt creation / prompt engineering
+  category: llm-evaluation
+  tags:
+  - prompt creation / prompt engineering
+  related_experiences:
+  - experience-freelance-unattributed
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-freelance-prompts
+  - claim-listed-annotation
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+  notes: Prompt creation is explicitly reported under unattributed freelance work; no named platform or advanced
+    methodology is confirmed.
+- id: skill-evaluation-test-cases
+  name: Test-case creation for AI responses
+  category: llm-evaluation
+  tags:
+  - test-case creation for ai responses
+  related_experiences:
+  - experience-freelance-unattributed
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-freelance-prompts
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+  notes: Platform attribution is unresolved; not proof of automated testing frameworks.
+- id: skill-rlhf
+  name: Reinforcement learning from human feedback (RLHF)
+  category: llm-evaluation
+  tags:
+  - rlhf
+  - human feedback
+  - ai training
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-ai
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: A general skills-list term only; no model training, reward modeling or RLHF pipeline implementation
+    is documented.
+- id: skill-data-annotation
+  name: Data annotation
+  category: data-annotation
+  tags:
+  - data annotation
+  related_experiences:
+  - experience-outlier
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-outlier-audio
+  - claim-listed-ai
+  - claim-listed-annotation
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-audio-annotation
+  name: Audio annotation
+  category: data-annotation
+  tags:
+  - audio annotation
+  related_experiences:
+  - experience-outlier
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-outlier-audio
+  - claim-outlier-evaluation
+  - claim-listed-annotation
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-speech-audio-analysis
+  name: Speech and audio content analysis
+  category: data-annotation
+  tags:
+  - speech and audio content analysis
+  related_experiences:
+  - experience-outlier
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-outlier-guidelines
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-annotation-guidelines
+  name: Task-specific annotation guidelines
+  category: data-annotation
+  tags:
+  - task-specific annotation guidelines
+  related_experiences:
+  - experience-outlier
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-outlier-guidelines
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-azure
+  name: Microsoft Azure
+  category: cloud-computing
+  tags:
+  - microsoft azure
+  related_experiences:
+  - experience-revloai
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-revloai-azure
+  - claim-listed-devops
+  - claim-listed-annotation-tools
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-azure-blob-storage
+  name: Azure Blob Storage
+  category: cloud-computing
+  tags:
+  - azure blob storage
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-devops
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: Named in the general skills list; not specifically attributed to RevloAI.
+- id: skill-cloud-infrastructure
+  name: Cloud infrastructure management
+  category: cloud-computing
+  tags:
+  - cloud infrastructure management
+  related_experiences:
+  - experience-revloai
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-revloai-azure
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-azure-devops
+  name: Azure DevOps
+  category: devops-infrastructure
+  tags:
+  - azure devops
+  related_experiences: []
+  related_projects:
+  - project-saferoads
+  related_background: []
+  evidence_refs:
+  - claim-saferoads-pipeline
+  - claim-listed-devops
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-cicd
+  name: Continuous integration and continuous delivery (CI/CD)
+  category: devops-infrastructure
+  tags:
+  - ci/cd
+  - continuous integration
+  - continuous delivery
+  - pipeline
+  related_experiences: []
+  related_projects:
+  - project-saferoads
+  related_background: []
+  evidence_refs:
+  - claim-saferoads-pipeline
+  - claim-listed-devops
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-build-test-deploy
+  name: Automated build, test and deployment pipelines
+  category: devops-infrastructure
+  tags:
+  - automated build, test and deployment pipelines
+  related_experiences: []
+  related_projects:
+  - project-saferoads
+  related_background: []
+  evidence_refs:
+  - claim-saferoads-pipeline
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-deployment-automation
+  name: Deployment automation
+  category: devops-infrastructure
+  tags:
+  - deployment automation
+  related_experiences:
+  - experience-revloai
+  related_projects:
+  - project-saferoads
+  related_background: []
+  evidence_refs:
+  - claim-revloai-azure
+  - claim-saferoads-pipeline
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-github-actions
+  name: GitHub Actions
+  category: devops-infrastructure
+  tags:
+  - github actions
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-devops
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: Listed in the general CV; a project or work example is not supplied.
+- id: skill-docker
+  name: Docker
+  category: devops-infrastructure
+  tags:
+  - docker
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-devops
+  - claim-listed-annotation-tools
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: Listed in the general CV; a project or work example is not supplied.
+- id: skill-postgresql
+  name: PostgreSQL
+  category: databases
+  tags:
+  - postgresql
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-web
+  - claim-listed-annotation-tools
+  verification_status: self_reported
+  evidence_type: listed_only
+- id: skill-mongodb
+  name: MongoDB
+  category: databases
+  tags:
+  - mongodb
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-web
+  - claim-listed-annotation-tools
+  verification_status: self_reported
+  evidence_type: listed_only
+- id: skill-data-modeling
+  name: Data modeling
+  category: databases
+  tags:
+  - data modeling
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-ai
+  verification_status: self_reported
+  evidence_type: listed_only
+- id: skill-robotics
+  name: Autonomous robotic positioning
+  category: robotics-vision
+  tags:
+  - autonomous robotic positioning
+  related_experiences: []
+  related_projects:
+  - project-robotic-positioning
+  related_background: []
+  evidence_refs:
+  - claim-robotics-system
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-ros2
+  name: ROS2
+  category: robotics-vision
+  tags:
+  - ros2
+  related_experiences: []
+  related_projects:
+  - project-robotic-positioning
+  related_background: []
+  evidence_refs:
+  - claim-robotics-stack
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-meca500
+  name: Meca500
+  category: robotics-vision
+  tags:
+  - meca500
+  related_experiences: []
+  related_projects:
+  - project-robotic-positioning
+  related_background: []
+  evidence_refs:
+  - claim-robotics-stack
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-gige-camera
+  name: GigE camera
+  category: robotics-vision
+  tags:
+  - gige camera
+  related_experiences: []
+  related_projects:
+  - project-robotic-positioning
+  related_background: []
+  evidence_refs:
+  - claim-robotics-stack
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-homography
+  name: Homography matrices
+  category: robotics-vision
+  tags:
+  - homography matrices
+  related_experiences: []
+  related_projects:
+  - project-robotic-positioning
+  related_background: []
+  evidence_refs:
+  - claim-robotics-homography
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-coordinate-transformation
+  name: Camera-to-robot coordinate transformation
+  category: robotics-vision
+  tags:
+  - camera-to-robot coordinate transformation
+  related_experiences: []
+  related_projects:
+  - project-robotic-positioning
+  related_background: []
+  evidence_refs:
+  - claim-robotics-homography
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-real-time-feedback
+  name: Real-time sensor feedback
+  category: robotics-vision
+  tags:
+  - real-time sensor feedback
+  related_experiences: []
+  related_projects:
+  - project-robotic-positioning
+  related_background: []
+  evidence_refs:
+  - claim-robotics-feedback
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-motion-control
+  name: Fault-tolerant motion control
+  category: robotics-vision
+  tags:
+  - fault-tolerant motion control
+  related_experiences: []
+  related_projects:
+  - project-robotic-positioning
+  related_background: []
+  evidence_refs:
+  - claim-robotics-feedback
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-unity
+  name: Unity
+  category: game-development
+  tags:
+  - unity
+  related_experiences: []
+  related_projects:
+  - project-slime-hunter
+  related_background: []
+  evidence_refs:
+  - claim-slime-stack
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-game-development
+  name: 2D top-down mobile game development
+  category: game-development
+  tags:
+  - 2d top-down mobile game development
+  related_experiences: []
+  related_projects:
+  - project-slime-hunter
+  related_background: []
+  evidence_refs:
+  - claim-slime-design
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-state-machines
+  name: State-machine-based enemy AI
+  category: game-development
+  tags:
+  - state-machine-based enemy ai
+  related_experiences: []
+  related_projects:
+  - project-slime-hunter
+  related_background: []
+  evidence_refs:
+  - claim-slime-ai
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-object-pooling
+  name: Object pooling
+  category: game-development
+  tags:
+  - object pooling
+  related_experiences: []
+  related_projects:
+  - project-slime-hunter
+  related_background: []
+  evidence_refs:
+  - claim-slime-rendering
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-sprite-atlases
+  name: Sprite atlases
+  category: game-development
+  tags:
+  - sprite atlases
+  related_experiences: []
+  related_projects:
+  - project-slime-hunter
+  related_background: []
+  evidence_refs:
+  - claim-slime-rendering
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-mobile-rendering
+  name: Mobile rendering optimization
+  category: game-development
+  tags:
+  - mobile rendering optimization
+  related_experiences: []
+  related_projects:
+  - project-slime-hunter
+  related_background: []
+  evidence_refs:
+  - claim-slime-rendering
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-mobile-publishing
+  name: Mobile game publication
+  category: game-development
+  tags:
+  - mobile game publication
+  related_experiences: []
+  related_projects:
+  - project-slime-hunter
+  related_background: []
+  evidence_refs:
+  - claim-slime-published
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+  notes: Publication is reported by the CVs; current store availability and listings are unverified.
+- id: skill-oop
+  name: Object-oriented programming
+  category: engineering-practices
+  tags:
+  - object-oriented programming
+  related_experiences:
+  - experience-revloai
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-revloai-design
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-design-patterns
+  name: Design patterns
+  category: engineering-practices
+  tags:
+  - design patterns
+  related_experiences:
+  - experience-revloai
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-revloai-design
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-agile-scrum
+  name: Agile / Scrum
+  category: engineering-practices
+  tags:
+  - agile / scrum
+  related_experiences:
+  - experience-revloai
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-revloai-scrum
+  - claim-listed-tools
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-code-review
+  name: Code review
+  category: engineering-practices
+  tags:
+  - code review
+  related_experiences:
+  - experience-revloai
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-revloai-scrum
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-modular-architecture
+  name: Modular software architecture
+  category: engineering-practices
+  tags:
+  - modular software architecture
+  related_experiences: []
+  related_projects:
+  - project-slime-hunter
+  related_background: []
+  evidence_refs:
+  - claim-slime-ai
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-process-analysis
+  name: Engineering workflow and bottleneck analysis
+  category: engineering-practices
+  tags:
+  - engineering workflow and bottleneck analysis
+  related_experiences:
+  - experience-aselsan
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-aselsan-workflows
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-engineering-optimization
+  name: Engineering optimization methodologies
+  category: engineering-practices
+  tags:
+  - engineering optimization methodologies
+  related_experiences:
+  - experience-aselsan
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-aselsan-optimization
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-quality-standards
+  name: Defense-industry quality standards
+  category: engineering-practices
+  tags:
+  - defense-industry quality standards
+  related_experiences:
+  - experience-aselsan
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-aselsan-optimization
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-system-integration
+  name: System integration frameworks
+  category: engineering-practices
+  tags:
+  - system integration frameworks
+  related_experiences:
+  - experience-aselsan
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-aselsan-optimization
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-uml
+  name: UML modeling
+  category: engineering-practices
+  tags:
+  - uml modeling
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-tools
+  verification_status: self_reported
+  evidence_type: listed_only
+- id: skill-critical-thinking
+  name: Critical thinking and analytical reasoning
+  category: engineering-practices
+  tags:
+  - critical thinking and analytical reasoning
+  related_experiences:
+  - experience-dataannotation
+  - experience-aselsan
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-analysis
+  - claim-dataannotation-reasoning
+  - claim-aselsan-workflows
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-attention-detail
+  name: Attention to detail
+  category: engineering-practices
+  tags:
+  - attention to detail
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-analysis
+  verification_status: self_reported
+  evidence_type: listed_only
+- id: skill-instruction-adherence
+  name: Instruction adherence assessment
+  category: engineering-practices
+  tags:
+  - instruction adherence assessment
+  related_experiences:
+  - experience-dataannotation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-dataannotation-multilingual
+  - claim-listed-analysis
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-problem-solving
+  name: Problem solving
+  category: engineering-practices
+  tags:
+  - problem solving
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-analysis
+  - claim-adaptability
+  verification_status: self_reported
+  evidence_type: listed_only
+- id: skill-quality-assessment
+  name: Content and output quality assessment
+  category: engineering-practices
+  tags:
+  - content and output quality assessment
+  related_experiences:
+  - experience-dataannotation
+  - experience-outlier
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-dataannotation-code
+  - claim-dataannotation-multilingual
+  - claim-outlier-guidelines
+  - claim-listed-analysis
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-adaptability
+  name: Learning new technologies and user-centric problem solving
+  category: engineering-practices
+  tags:
+  - learning new technologies and user-centric problem solving
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-adaptability
+  verification_status: self_reported
+  evidence_type: listed_only
+- id: skill-git
+  name: Git
+  category: tools-frameworks
+  tags:
+  - git
+  related_experiences: []
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-listed-tools
+  - claim-listed-annotation-tools
+  verification_status: self_reported
+  evidence_type: listed_only
+- id: skill-turkish
+  name: Turkish
+  category: languages-communication
+  tags:
+  - turkish
+  related_experiences: []
+  related_projects: []
+  related_background:
+  - background-languages
+  evidence_refs:
+  - claim-language-turkish
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+  proficiency:
+    level: Native
+    basis: Candidate-reported in both supplied CVs; no certificate provided.
+- id: skill-english
+  name: English
+  category: languages-communication
+  tags:
+  - english
+  related_experiences: []
+  related_projects: []
+  related_background:
+  - background-languages
+  evidence_refs:
+  - claim-language-english
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+  proficiency:
+    level: C1
+    basis: Candidate-reported in both supplied CVs; no certificate provided.
+    description: Advanced
+- id: skill-german
+  name: German
+  category: languages-communication
+  tags:
+  - german
+  related_experiences: []
+  related_projects: []
+  related_background:
+  - background-languages
+  evidence_refs:
+  - claim-language-german
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+  proficiency:
+    level: A2
+    basis: Candidate-reported in both supplied CVs; no certificate provided.
+    description: Elementary
+- id: skill-instagram
+  name: Instagram
+  category: content-media
+  tags:
+  - instagram
+  related_experiences:
+  - experience-content-creation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-content-original
+  - claim-content-accounts
+  - claim-listed-media
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-tiktok
+  name: TikTok
+  category: content-media
+  tags:
+  - tiktok
+  related_experiences:
+  - experience-content-creation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-content-original
+  - claim-listed-media
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-short-form-video
+  name: Short-form video creation
+  category: content-media
+  tags:
+  - short-form video creation
+  related_experiences:
+  - experience-content-creation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-content-original
+  - claim-listed-media
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-fitness-content
+  name: Fitness and workout content creation
+  category: content-media
+  tags:
+  - fitness and workout content creation
+  related_experiences:
+  - experience-content-creation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-content-original
+  - claim-content-concepts
+  - claim-listed-media
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-entertainment-content
+  name: Entertainment and fitness-humor content
+  category: content-media
+  tags:
+  - entertainment and fitness-humor content
+  related_experiences:
+  - experience-content-creation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-content-original
+  - claim-content-concepts
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-content-concepts
+  name: Content concept development
+  category: content-media
+  tags:
+  - content concept development
+  related_experiences:
+  - experience-content-creation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-content-concepts
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-video-editing
+  name: Video editing
+  category: content-media
+  tags:
+  - video editing
+  related_experiences:
+  - experience-content-creation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-content-editing
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-captions
+  name: Captions
+  category: content-media
+  tags:
+  - captions
+  related_experiences:
+  - experience-content-creation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-content-editing
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-hashtags
+  name: Hashtags
+  category: content-media
+  tags:
+  - hashtags
+  related_experiences:
+  - experience-content-creation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-content-editing
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-platform-presentation
+  name: Platform-specific content presentation
+  category: content-media
+  tags:
+  - platform-specific content presentation
+  related_experiences:
+  - experience-content-creation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-content-editing
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-social-trends
+  name: Social media trends
+  category: content-media
+  tags:
+  - social media trends
+  related_experiences:
+  - experience-content-creation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-content-concepts
+  - claim-listed-media
+  verification_status: source_supported
+  evidence_type: task_or_record_supported
+- id: skill-audience-engagement
+  name: Audience engagement
+  category: content-media
+  tags:
+  - audience engagement
+  related_experiences:
+  - experience-content-creation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-content-engagement
+  - claim-listed-media
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: Familiarity is reported; no performance metrics or specific campaign evidence is supplied.
+- id: skill-content-analysis
+  name: Content analysis
+  category: content-media
+  tags:
+  - content analysis
+  related_experiences:
+  - experience-content-creation
+  related_projects: []
+  related_background: []
+  evidence_refs:
+  - claim-content-engagement
+  - claim-listed-media
+  verification_status: self_reported
+  evidence_type: listed_only
+  notes: Familiarity is reported; no performance metrics or specific campaign evidence is supplied.
