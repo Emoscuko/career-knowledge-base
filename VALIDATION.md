@@ -5,7 +5,7 @@ Validated on **2026-11-07**. The evidence is candidate-supplied CV content, not 
 ## Data and source coverage
 
 - Both supplied PDFs have two pages. All four pages were extracted and visually inspected.
-- 17 indexed data/review records; **62 source-traceable claims**; **90 skills** in **15 categories**.
+- 18 indexed data/review/policy records; **62 source-traceable claims**; **90 skills** in **15 categories**.
 - 68 skills have an explicit source-backed task/background basis; 22 remain listed-only/self-reported. This distinction does not assign numeric proficiency.
 - All **26 page/section locators** from the two source documents support at least one claim. Document fingerprints are retained; original files and raw extracts are excluded.
 - Syntax, duplicate YAML keys, required identifiers, uniqueness, reference targets, source pages, known date ordering, skill categories/evidence, manifest coverage and local Markdown links: **PASS**.
@@ -13,7 +13,7 @@ Validated on **2026-11-07**. The evidence is candidate-supplied CV content, not 
 
 ## Validator behavior tests
 
-**13 tests passed** using Python 3.9 and PyYAML 6.0.3. The checks cover a valid repository and rejection of duplicate YAML keys, duplicate/missing record IDs, unresolved skill evidence, unsupported skill upgrades, invalid/reversed dates, confirmed placeholders, broken local links, personal email, accidental PDF evidence and remote TeX input.
+**30 tests passed** using Python 3.9 and PyYAML 6.0.3. The checks cover a valid repository and rejection of duplicate YAML keys, duplicate/missing record IDs, unresolved skill evidence, unsupported skill upgrades, invalid/reversed dates, confirmed placeholders, broken local links, personal email, accidental PDF evidence and remote TeX input. Coverage tests additionally verify mandatory ASELSAN retention, all supported roles, background activities, future experience discovery, unknown/duplicate IDs, wrong displayed organizations, missing role text, malformed entries/policy, comments/preamble entries, attribution deferral and explicitly documented owner exclusions.
 
 A missing-ID fixture exposed an error-reporting crash; identifier registration now reports the validation error and skips the malformed record. The regression test prevents recurrence.
 
@@ -22,6 +22,8 @@ Reproduce with:
 ```sh
 python3 -m pip install -r requirements-dev.txt
 python3 scripts/validate.py
+python3 scripts/validate_resume.py cv/examples/ai-trainer.tex
+python3 scripts/validate_resume.py cv/examples/backend-engineer.tex
 python3 -m unittest discover -s tests -v
 ```
 
@@ -41,7 +43,13 @@ The final three compiler logs contain no overfull boxes. Pages were rendered wit
 
 Tectonic's input-directory behavior required an explicit repository search path. The shared style now guards pdfTeX-only Unicode mapping commands so XeTeX/Tectonic can use its own mappings. The corrected commands and standalone export instructions are documented in `cv/generation-rules.md`; no shell escape was enabled. Native pdfLaTeX compatibility is designed into the source but was not executed in this environment.
 
-The AI sample prioritizes Outlier audio work, DataAnnotation coding/multilingual assessment and relevant chatbot/content experience. The backend sample prioritizes RevloAI, ASELSAN's actual process-engineering work, SafeRoads, robotics and game architecture. Their evidence maps document selection and gaps. Both omit uncertain employer attribution, unsupported metrics, listed-only production claims and unprovided certifications.
+The template and both samples now include all five supported distinct experiences: ASELSAN, RevloAI, Outlier, DataAnnotation.tech and independent content creation. The AI sample gives Outlier/DataAnnotation more detail and keeps ASELSAN concise. The backend sample leads with RevloAI/ASELSAN and gives the AI/content roles concise entries, reducing optional project detail. All three still compile to one page with readable text, no overfull boxes and visually checked layouts. The policy permits a second page before dropping a supported role. Their coverage reports defer the unattributed freelance source without treating it as another job. Unsupported metrics, listed-only production claims and unprovided certifications remain omitted.
+
+## Persistent coverage policy
+
+`cv/generation-policy.yaml`, AGENTS, the README, generation rules and reusable resume/job-analysis prompts now distinguish complete experience coverage from relevance-based emphasis. Every supported distinct role must have a displayed organization and accurate role, even when brief. Only optional bullets/projects/skills are selected away. Explicit owner-requested omissions require a reason; uncertain attribution remains reported separately.
+
+The repository validator checks the template and examples automatically. The standalone resume checker derives required experience IDs from current indexed records and the policy, including activities under `background/`. It rejects an annotation resume missing ASELSAN. A newly added supported experience also becomes required, and the profile registry cannot hide a background activity. All generated sources use the invisible stable ID in `ResumeExperience` and print the organization/role fields. This checks literal source entries rather than arbitrary TeX execution, so the actual compiled PDFs were also checked for every organization/activity. External AI assistants must read these instructions and run the checker or perform the stated manual comparison; the repository cannot force arbitrary assistants to execute tools.
 
 ## Privacy and public-source review
 
@@ -53,7 +61,7 @@ The AI sample prioritizes Outlier audio work, DataAnnotation coding/multilingual
 
 ## GitHub publication
 
-Published: [Emoscuko/career-knowledge-base](https://github.com/Emoscuko/career-knowledge-base). GitHub confirmed visibility `public` and default branch `main`. An unauthenticated API request and archive download independently confirmed public access. All 36 tracked files in the downloaded archive matched initial implementation commit `1fd3eece005d4e002fa46ee571960d308af6d5b8` byte for byte, and the raw README matched the local source. This verification report is added in a follow-up commit; the final delivery also verifies the final published archive. PDFs and private source files were absent from the archive.
+Initial publication: [Emoscuko/career-knowledge-base](https://github.com/Emoscuko/career-knowledge-base). GitHub confirmed visibility `public` and default branch `main`. An unauthenticated API request and archive download independently confirmed public access. All 36 tracked files in the downloaded archive matched initial implementation commit `1fd3eece005d4e002fa46ee571960d308af6d5b8` byte for byte, and the raw README matched the local source. That initial verification report was added in a follow-up commit. The current coverage-policy revision is separately validated and its published policy/instructions/examples are checked after pushing. PDFs and private source files were absent from the archive.
 
 For a fresh local copy that has not been published, use the following from its root. Do not recreate or overwrite an existing repository. Configure a public/noreply Git identity first if needed.
 

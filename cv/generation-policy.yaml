@@ -1,0 +1,38 @@
+schema_version: 1
+id: resume-generation-policy
+kind: generation_policy
+updated_on: '2026-11-07'
+applies_to: resume
+preference_origin: Candidate instruction to retain all experiences and tailor their emphasis.
+experience_coverage:
+  mode: all_supported_distinct
+  registry: profile.yaml#experience_refs
+  eligible_statuses:
+  - source_supported
+  - externally_verified
+  less_relevant_treatment: concise_entry
+  omission_requires_explicit_user_request: true
+  uncertain_attribution: defer_and_report_without_counting_as_another_job
+relevance_controls:
+- section_placement
+- entry_order
+- detail_length
+- bullet_selection
+optional_content:
+  projects: select_by_relevance
+  skills: select_by_relevance_and_evidence
+  achievements: select_by_relevance_and_evidence
+layout:
+  language: English
+  preferred_pages: 1
+  overflow: allow_second_page_before_omitting_experience
+  minimum_font_pt: 10
+  minimum_margin_mm: 16
+  compression_order:
+  - remove_repetition
+  - shorten_less_relevant_experience_entries
+  - reduce_optional_projects_skills_and_awards
+  - use_second_page_if_needed
+validation:
+  experience_macro: ResumeExperience
+  coverage_report: every_experience_record_including_deferred_records

@@ -48,3 +48,14 @@ Related record references require the right record kind. Do not add an experienc
 ## Validation boundaries
 
 The validator checks syntax, uniqueness, required fields, references, evidence status, month/date ordering, known source pages, manifest coverage, local Markdown links, safe LaTeX inputs and likely private contacts/secrets. It cannot prove employment, detect every semantic exaggeration, establish live store availability or guarantee an ATS vendor's parsing. Source review, rendered PDF inspection and private-data review remain necessary. Optional external URL checks report access failures separately from local data errors.
+
+
+## Persistent resume preferences and coverage
+
+`cv/generation-policy.yaml` is the canonical candidate preference, separate from career facts and layout. It is a versioned data record included in the manifest. It requires all source-supported/externally-verified distinct experiences, permits relevance-based ordering/detail, keeps other roles concise and gives coverage priority over the preferred one-page limit. Only explicit owner-requested exclusions or attribution-uncertain records can leave the experience section. Optional project/skill selection is unchanged.
+
+`profile.yaml` -> `experience_refs` must cover every indexed `kind: experience` record exactly once, including `background/content-creation.md`. Required coverage is computed from these current records and the policy's eligible statuses; it is not a hardcoded employer list. A newly added supported experience automatically becomes required.
+
+LaTeX work entries use `\ResumeExperience{record-id}{organization}{role}{dates}{location}`; the style delegates the four displayed fields to `\ResumeEntry` and never prints the stable ID. Education still uses `\ResumeEntry`. The pure coverage checker validates body entries and organization association, rejects missing/duplicate/unknown/uncertain work entries, and returns included/deferred/excluded decisions. It is not a full TeX interpreter or a substitute for source review and rendered PDF inspection. Literal organization/role fields are required; dates/location may remain empty.
+
+`scripts/validate.py` checks the repository template/examples by default. `scripts/validate_resume.py <file.tex>` applies the same rules to a new generated document and prints the inventory report. An explicit owner-requested exclusion is recorded through `--exclude ID=OWNER_REQUEST_REASON` and must be disclosed outside the resume; this escape hatch cannot establish whether the user actually authorized it. AI instructions require that authorization rather than assuming it.

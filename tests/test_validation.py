@@ -58,6 +58,15 @@ class ValidationTests(unittest.TestCase):
         self.change_yaml('skills.yaml', lambda obj: obj['skills'][0]['evidence_refs'].append('claim-nonexistent'))
         self.assert_code('E_REFERENCE')
 
+    def test_profile_cannot_hide_a_background_experience(self):
+        self.change_yaml('profile.yaml', lambda obj: obj['experience_refs'].remove('experience-content-creation'))
+        self.assert_code('E_COVERAGE')
+
+    def test_repository_examples_cannot_omit_aselsan(self):
+        path = self.root / 'cv/examples/ai-trainer.tex'
+        path.write_text(path.read_text().replace('\\ResumeExperience{experience-aselsan}', '\\ResumeEntry'))
+        self.assert_code('E_RESUME')
+
     def test_listed_skill_cannot_be_upgraded_without_task_evidence(self):
         self.change_yaml('skills.yaml', lambda obj: obj['skills'][0].update(verification_status='source_supported'))
         self.assert_code('E_EVIDENCE')

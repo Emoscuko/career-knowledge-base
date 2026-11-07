@@ -10,6 +10,8 @@ import sys
 from urllib.parse import unquote, urlsplit
 from urllib.request import Request, urlopen
 
+from resume_coverage import policy_errors, validate_resume_source
+
 try:
     import yaml
 except ImportError:
@@ -239,6 +241,20 @@ def validate_repository(root, private_values=()):
             refs([language.get('claim_ref')], claims, path, 'claim_ref')
     for item in review_items:
         refs(item.get('record_refs', []), by_id, 'DATA_REVIEW.md', 'record_refs')
+
+    experiences = {identifier: obj for identifier, obj in by_id.items() if obj.get('kind') == 'experience'}
+    experience_refs = data.get('profile.yaml', {}).get('experience_refs', [])
+    if (not isinstance(experience_refs, list) or set(experience_refs) != set(experiences)
+            or len(experience_refs) != len(set(experience_refs))):
+        error('E_COVERAGE', 'profile.yaml', 'experience_refs must list every experience record exactly once, including background activities')
+    policy = data.get('cv/generation-policy.yaml', {})
+    for message in policy_errors(policy):
+        error('E_POLICY', 'cv/generation-policy.yaml', message)
+    for resume in [root / 'cv/template.tex', *sorted((root / 'cv/examples').glob('*.tex'))]:
+        if resume.is_file():
+            coverage_errors, _ = validate_resume_source(resume.read_text(), experiences, policy)
+            for message in coverage_errors:
+                error('E_RESUME', resume.relative_to(root), message)
 
     inventory = data.get('skills.yaml', {})
     categories = {}

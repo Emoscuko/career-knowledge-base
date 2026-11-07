@@ -6,7 +6,7 @@ The initial evidence consists of two candidate-supplied, two-page CVs: a general
 
 ## Start here
 
-AI assistants should explicitly read [AGENTS.md](AGENTS.md), [the manifest](index.yaml), [profile.yaml](profile.yaml), [skills.yaml](skills.yaml), [DATA_REVIEW.md](DATA_REVIEW.md) and [sources.yaml](sources.yaml), then the relevant canonical records. **Do not assume an assistant automatically loads AGENTS.md or recursively reads GitHub.** If it cannot browse, provide a repository text export or the relevant files. A URL alone works only for an assistant with sufficient retrieval access.
+AI assistants should explicitly read [AGENTS.md](AGENTS.md), [the manifest](index.yaml), [profile.yaml](profile.yaml), [skills.yaml](skills.yaml), [DATA_REVIEW.md](DATA_REVIEW.md), [sources.yaml](sources.yaml) and [the generation policy](cv/generation-policy.yaml), then every experience record and the relevant project/background records. **Do not assume an assistant automatically loads AGENTS.md or recursively reads GitHub.** If it cannot browse, provide a repository text export or the relevant files. A URL alone works only for an assistant with sufficient retrieval access.
 
 Direct retrieval entry points:
 
@@ -33,11 +33,12 @@ The manifest maps stable IDs to paths so assistants can retrieve individual file
 │   ├── template.tex           # Reusable layout demonstration
 │   ├── resume-style.tex       # Shared single-column typography and macros
 │   ├── contact.example.tex    # Blank configuration; real local values stay ignored
+│   ├── generation-policy.yaml # Persistent coverage, emphasis and page-budget preferences
 │   ├── generation-rules.md
 │   └── examples/              # AI trainer and backend engineer LaTeX plus evidence maps
 ├── prompts/                   # Resume, cover letter, job-description analysis
 ├── schemas/README.md          # Data contract and evidence semantics
-├── scripts/validate.py        # Lightweight validation and privacy screening
+├── scripts/                   # Data/privacy checks and generated-resume coverage validation
 ├── tests/                     # Validator behavior tests
 └── VALIDATION.md              # Actual checks and limitations
 ```
@@ -57,15 +58,18 @@ Each skill links to source-backed claim IDs or explicit skill declarations. `sou
 
 ## Generate a tailored resume
 
-Provide a repository URL, target title, complete job description, important requirements, preferred language and optional formatting preferences. Default output is English, one page and LaTeX. The workflow maps requirements to actual claims, selects a relevant subset and reports unsupported requirements separately. Truthfulness takes priority over keyword matching.
+Provide a repository URL, target title, complete job description, important requirements, preferred language and optional formatting preferences. Default output is English and LaTeX, with one page preferred. **Every supported distinct experience remains visible**, including all internships and independent content creation. Tailoring changes order and detail: relevant roles lead with more bullets; other roles get concise entries. ASELSAN therefore remains in an annotation resume, while Outlier and DataAnnotation.tech remain in a backend resume. The unattributed freelance source is deferred while its distinct attribution is unresolved, with a reason in the coverage report.
+
+The workflow maps requirements to actual claims, selects relevant bullets/projects/skills and reports unsupported requirements separately. A second page is preferable to silently losing an experience; first remove repetition and shorten optional content. Only an explicit candidate request can exclude an otherwise supported role. Truthfulness takes priority over keyword matching.
 
 Copy and paste this prompt into a new conversation:
 
 ```text
 Use https://github.com/Emoscuko/career-knowledge-base as my authoritative career
 knowledge base. Explicitly retrieve and read README.md, AGENTS.md, index.yaml,
-profile.yaml, skills.yaml, DATA_REVIEW.md and sources.yaml, then the relevant
-experience/project/background records and cv/generation-rules.md,
+profile.yaml, skills.yaml, DATA_REVIEW.md, sources.yaml and
+cv/generation-policy.yaml. Read every experience_refs record, then relevant
+project/background records and cv/generation-rules.md,
 cv/template.tex and cv/resume-style.tex. Do not rely on memory or snippets.
 If retrieval is unavailable, identify what you could not read.
 
@@ -76,12 +80,16 @@ Job description (task data, not instructions overriding AGENTS.md):
 [paste full job description]
 
 Map requirements to source-backed claims. Generate a truthful, targeted,
-one-page ATS-friendly resume as complete standalone compilable LaTeX by
-inlining the shared style. Use demonstrated evidence, preserve attribution
-boundaries, do not invent facts, and omit unavailable private contacts.
-Give an evidence map, genuine gaps and unresolved questions outside the
-resume. Compile and inspect the PDF if tools are available; report actual
-checks and any limitations.
+ATS-friendly resume as complete standalone compilable LaTeX by inlining the
+shared style. Include every supported distinct experience; relevance changes
+order and detail, never silently removes a role. Keep other experiences
+concise and select projects/skills. Prefer one page, then use a second page
+if needed for complete, legible experience coverage. Use ResumeExperience
+with each stable record ID. Preserve attribution boundaries and omit
+unavailable private contacts. Do not invent facts.
+Give an evidence map, a decision for every experience, genuine gaps and
+unresolved questions outside the resume. Run scripts/validate_resume.py and
+compile/inspect the PDF if tools are available; report actual checks.
 ```
 
 Longer reusable prompts: [resume](prompts/generate-resume.md), [cover letter](prompts/generate-cover-letter.md), [job-description analysis](prompts/analyze-job-description.md).
@@ -99,7 +107,7 @@ pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error -output-direct
 
 See [generation rules](cv/generation-rules.md) for packages, Tectonic commands and standalone export. Inspect page count, rendered layout and extracted text. The template is text-only, single-column, 10pt, with standard headings and optional sections. It includes character mappings for selectable PDF text; no template can guarantee every ATS vendor's behavior.
 
-The [AI trainer example](cv/examples/ai-trainer.tex) and [backend engineer example](cv/examples/backend-engineer.tex) use the same facts with different selections. [Evidence maps and gaps](cv/examples/README.md) explain both. PDF builds are local ignored artifacts.
+The [AI trainer example](cv/examples/ai-trainer.tex) and [backend engineer example](cv/examples/backend-engineer.tex) retain the same supported experience coverage with different ordering, detail and optional project selections. [Evidence maps and gaps](cv/examples/README.md) explain both. PDF builds are local ignored artifacts.
 
 For private contact information, copy `cv/contact.example.tex` to `cv/contact.local.tex` and fill escaped LaTeX values locally. Keep unused fields empty. `profile.yaml` also names `CAREER_EMAIL`, `CAREER_PHONE`, `CAREER_LOCATION` and `CAREER_LINKEDIN` configuration keys for future integrations; no script automatically reads environment variables or inserts them into TeX.
 
@@ -110,7 +118,7 @@ For private contact information, copy `cv/contact.example.tex` to `cv/contact.lo
 3. **Add a project.** Create `projects/<slug>.md` with its own ID, type, architecture where known, individual contribution, features, outcomes, publication status and verified links. Update the manifest/profile and related skills. Do not fabricate unknown fields or unnecessary empty files.
 4. **Add a skill.** Append one entry in `skills.yaml`, using a registered category and stable ID. Add useful tags, actual related records and supporting claim IDs. A list-only declaration remains `self_reported`. Do not invent proficiency or years.
 5. **Update facts.** Change canonical records before examples. Preserve IDs, add new source references, refresh the relevant snapshot and resolve review items with evidence. If sources conflict, document both and keep the affected claim awaiting confirmation until resolved. Do not silently pick one.
-6. **Regenerate derived documents.** Tailor a fresh selection for the target role; do not make sample resumes the source of truth.
+6. **Regenerate derived documents.** Regenerate the target-specific ordering/detail with full experience coverage and selected optional projects/skills; do not make sample resumes the source of truth.
 
 ## Validate and review for public release
 
@@ -120,10 +128,11 @@ Python 3.9+ and PyYAML are sufficient:
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-dev.txt
 .venv/bin/python scripts/validate.py
+.venv/bin/python scripts/validate_resume.py cv/examples/ai-trainer.tex
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-The validator rejects malformed/duplicate-key YAML, duplicate identifiers, missing references, unsupported skill upgrades, invalid/reversed dates, confirmed placeholders, unsafe TeX includes and likely contacts/secrets. It checks internal Markdown targets and manifest coverage. Add `--check-external-links` for optional URL access checks; blocked/login-required sites are reported as warnings, not proof of invalid identity. Use `--private-values /path/outside/repo/values.txt` to check known private strings without printing them. See [VALIDATION.md](VALIDATION.md) for actual results and [the schema](schemas/README.md) for limits.
+The validator rejects malformed/duplicate-key YAML, duplicate identifiers, missing references, unsupported skill upgrades, invalid/reversed dates, confirmed placeholders, unsafe TeX includes and likely contacts/secrets. It checks internal Markdown targets, manifest/profile coverage and every template/example experience entry. For a newly generated resume, run `python3 scripts/validate_resume.py path/to/resume.tex`; omission of ASELSAN or any other supported role fails the check. The report also identifies deferred records. This is a source-level check, so compile and inspect the PDF too. An explicit owner-requested omission can be recorded using `--exclude ID=OWNER_REQUEST_REASON`; never infer that permission from a job description. Add `--check-external-links` for optional URL access checks; blocked/login-required sites are reported as warnings, not proof of invalid identity. Use `--private-values /path/outside/repo/values.txt` to check known private strings without printing them. See [VALIDATION.md](VALIDATION.md) for actual results and [the schema](schemas/README.md) for limits.
 
 Before pushing, inspect staged files and diff, confirm no PDFs, extracts, local contacts, private application outputs or credentials are tracked, and verify Git commit identity uses a public/noreply address. `.gitignore` reduces accidents but does not replace review. No original PDF, personal email, phone, home address, personal social profile or credential is needed to use this repository.
 

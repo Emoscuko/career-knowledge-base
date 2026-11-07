@@ -6,6 +6,7 @@ entry_points:
 - AGENTS.md
 - DATA_REVIEW.md
 - cv/generation-rules.md
+- cv/generation-policy.yaml
 records:
 - id: profile-emirhan-atar
   path: profile.yaml
@@ -15,6 +16,8 @@ records:
   path: sources.yaml
 - id: data-review
   path: DATA_REVIEW.md
+- id: resume-generation-policy
+  path: cv/generation-policy.yaml
 - id: experience-aselsan
   path: experience/aselsan.md
 - id: experience-dataannotation
